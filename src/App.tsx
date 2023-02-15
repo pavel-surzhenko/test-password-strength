@@ -8,28 +8,31 @@ export const App: React.FC = () => {
     let backGround3 = '';
     let level = '';
 
-    const isEasy = (v: string) => /^([a-zа-яё]+|\d+|\W+|[\W_]+)$/i.test(v);
+    const isEasy = (v: string) =>
+        /^([a-z]+|\d+|\W+|[\W_]+)$/i.test(v) && /^([^а-я]+)$/i.test(v);
+
     const isMedium = (v: string) =>
-        /^([a-zа-яё\W_]+)$/i.test(v) ||
-        /^([a-zа-яё\d]+)$/i.test(v) ||
-        /^([\d\W_]+)$/i.test(v);
-    const isStrong = (v: string) => /^([a-zа-яё\d\W_]+)$/i.test(v);
+        (/^[a-z\W_]+$/i.test(v) ||
+            /^([a-z\d]+)$/i.test(v) ||
+            /^([\d\W_]+)$/i.test(v)) &&
+        /^([^а-я]+)$/i.test(v);
+
+    const isStrong = (v: string) =>
+        /^([a-z\d\W_]+)$/i.test(v) && /^([^а-я]+)$/i.test(v);
 
     if (value.length > 0 && value.length < 8) {
-        backGround1 = 'red';
-        backGround2 = 'red';
-        backGround3 = 'red';
+        backGround1 = backGround2 = backGround3 = 'red';
     } else if (isEasy(value)) {
         backGround1 = 'red';
     } else if (isMedium(value)) {
-        backGround1 = 'yellow';
-        backGround2 = 'yellow';
+        backGround1 = backGround2 = 'yellow';
     } else if (isStrong(value)) {
         backGround1 = backGround2 = backGround3 = 'green';
     }
 
     return (
         <section>
+            <h1>Test your password</h1>
             <input
                 type='text'
                 value={value}
