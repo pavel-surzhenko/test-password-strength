@@ -21,7 +21,7 @@ export const App: React.FC = () => {
 
     const isRu = (v:string ) => /([а-я]+)/i.test(v);
 
-    if (value.length > 0 && value.length < 8 || isRu(value)) {
+    if ((value.length > 0 && value.length < 8 )|| isRu(value)) {
         backGround1 = backGround2 = backGround3 = 'red';
     } else if (isEasy(value)) {
         backGround1 = 'red';
@@ -47,5 +47,3 @@ export const App: React.FC = () => {
         </section>
     );
 };
-
-// && /^([^а-я]+)$/i.test(v)
