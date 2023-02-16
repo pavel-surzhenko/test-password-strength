@@ -34,7 +34,7 @@ export const App: React.FC = () => {
     return (
         <section>
             <h1>Test your password</h1>
-            <span>{isRu(value) && 'Please not in russian'}</span>
+            <span>{isRu(value) && 'Please in English'}</span>
             <input
                 type='text'
                 value={value}
