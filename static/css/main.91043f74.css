@@ -1,2 +1,0 @@
-*{box-sizing:border-box;margin:0;padding:0}section{align-items:center;display:flex;flex-direction:column;height:100vh;justify-content:center}section h1{margin-bottom:25px}section input{font-size:30px;height:50px;margin-bottom:25px;width:20%}section div{background-color:gray;border-radius:5px;height:50px;margin-bottom:10px;width:20%}@media screen and (max-width:720px){section div,section input{width:60%}}
-/*# sourceMappingURL=main.91043f74.css.map*/
